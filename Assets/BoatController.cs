@@ -8,22 +8,47 @@ using UnityEngine.Serialization;
 public class BoatController : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-    public float moveSpeed;
+    [FormerlySerializedAs("maxSpeed")] public float maxVelocity;
+    public float acceleration;
+    private float _velocity;
+    
     public float turnSpeed;
-
+    public bool isPlayerDriving = false;
+    public GameObject playerDriving;
+    [FormerlySerializedAs("camera")] public Camera boatCamera;
+    
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _velocity = 0;
     }
 
     private void FixedUpdate()
     {
+        if (!isPlayerDriving) return;
+
+        if (Input.GetButtonDown("Interact"))
+        {
+            isPlayerDriving = false;
+            playerDriving.transform.position = transform.position + 5 * transform.right;
+            boatCamera.gameObject.SetActive(false);
+            playerDriving.SetActive(true);
+        }
+        
         if (Input.GetKey(KeyCode.W))
         {
-            var isolationVector = new Vector3(1, 0, 1);
-            var newPos = transform.position + Vector3.Scale(transform.forward, isolationVector).normalized * (moveSpeed * Time.fixedDeltaTime);
-            _rigidbody.MovePosition(newPos);
+            _velocity = Mathf.Min(_velocity + acceleration * Time.fixedDeltaTime, maxVelocity);
         }
+        else
+        {
+            _velocity = Mathf.Lerp(_velocity, 0, 0.02f);
+        }
+
+        var forwardNotVertical = transform.forward;
+        forwardNotVertical.y = 0;
+        forwardNotVertical.Normalize();
+        var newPos = transform.position + forwardNotVertical * (_velocity * Time.fixedDeltaTime);
+        _rigidbody.MovePosition(newPos);
         
         if (Input.GetKey(KeyCode.A))
         {
@@ -36,5 +61,13 @@ public class BoatController : MonoBehaviour
             var newRot = transform.rotation.eulerAngles + transform.up * (Time.fixedDeltaTime * turnSpeed);
             _rigidbody.MoveRotation(Quaternion.Euler(newRot));
         }
+    }
+
+    public void GetInBoat(GameObject player)
+    {
+        playerDriving = player;
+        player.SetActive(false);
+        boatCamera.gameObject.SetActive(true);
+        isPlayerDriving = true;
     }
 }
