@@ -82,10 +82,11 @@
 			float3 gridPoint = vertexData.vertex.xyz;
 			float3 tangent = float3(1, 0, 0);
 			float3 binormal = float3(0, 0, 1);
+        	float3 worldPos = (mul(unity_ObjectToWorld, vertexData.vertex)).xyz;
 			float3 p = gridPoint;
-			p += GerstnerWave(_WaveA, gridPoint, tangent, binormal);
-			p += GerstnerWave(_WaveB, gridPoint, tangent, binormal);
-        	p += GerstnerWave(_WaveC, gridPoint, tangent, binormal);
+			p += GerstnerWave(_WaveA, worldPos, tangent, binormal);
+			p += GerstnerWave(_WaveB, worldPos, tangent, binormal);
+        	p += GerstnerWave(_WaveC, worldPos, tangent, binormal);
 			float3 normal = normalize(cross(binormal, tangent));
 			vertexData.vertex.xyz = p;
 			vertexData.normal = normal;
