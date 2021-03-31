@@ -30,7 +30,8 @@ public class WaveManager : MonoBehaviour
         var k = 2 * Mathf.PI / wavelength;
         var c = Mathf.Sqrt(9.8f / k);
         var d = new Vector2(wave.x, wave.y).normalized;
-        var f = k * (Vector2.Dot(d, new Vector2(p.x, p.z)) - c * Time.time);
+        // IF waves get out of sync again, change to Shader.GetGlobalVector(_Time)
+        var f = k * (Vector2.Dot(d, new Vector2(p.x, p.z)) - c * Time.timeSinceLevelLoad);
         var a = steepness / k;
 
         return a * Mathf.Sin(f);

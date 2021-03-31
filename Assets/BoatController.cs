@@ -7,20 +7,27 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(Rigidbody))]
 public class BoatController : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
+    
     [FormerlySerializedAs("maxSpeed")] public float maxVelocity;
     public float acceleration;
     private float _velocity;
     
-    public float turnSpeed;
+    [FormerlySerializedAs("turnSpeed")] public float maxTurnSpeed;
+    public float _turnAccelerationFactor;
+    private float _currentTurnSpeed;
+    
     public bool isPlayerDriving = false;
     public GameObject playerDriving;
+    
     [FormerlySerializedAs("camera")] public Camera boatCamera;
+    
+    private Rigidbody _rigidbody;
     
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _velocity = 0;
+        _currentTurnSpeed = 0;
     }
 
     private void FixedUpdate()
@@ -35,14 +42,7 @@ public class BoatController : MonoBehaviour
             playerDriving.SetActive(true);
         }
         
-        if (Input.GetKey(KeyCode.W))
-        {
-            _velocity = Mathf.Min(_velocity + acceleration * Time.fixedDeltaTime, maxVelocity);
-        }
-        else
-        {
-            _velocity = Mathf.Lerp(_velocity, 0, 0.02f);
-        }
+        _velocity = Input.GetKey(KeyCode.W) ? Mathf.Min(_velocity + acceleration * Time.fixedDeltaTime, maxVelocity) : Mathf.Lerp(_velocity, 0, 0.02f);
 
         var forwardNotVertical = transform.forward;
         forwardNotVertical.y = 0;
@@ -52,15 +52,19 @@ public class BoatController : MonoBehaviour
         
         if (Input.GetKey(KeyCode.A))
         {
-            var newRot = transform.rotation.eulerAngles - transform.up * (Time.fixedDeltaTime * turnSpeed);
-            _rigidbody.MoveRotation(Quaternion.Euler(newRot));
-        }
-
-        if (Input.GetKey(KeyCode.D))
+            _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, -maxTurnSpeed, _turnAccelerationFactor * Time.deltaTime);
+        } else if (Input.GetKey(KeyCode.D))
         {
-            var newRot = transform.rotation.eulerAngles + transform.up * (Time.fixedDeltaTime * turnSpeed);
-            _rigidbody.MoveRotation(Quaternion.Euler(newRot));
+            _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, maxTurnSpeed, _turnAccelerationFactor * Time.deltaTime);
         }
+        else
+        {
+            _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, 0, 0.3f);
+        }
+        
+        
+        var newRot = transform.rotation.eulerAngles + transform.up * (Time.fixedDeltaTime * _currentTurnSpeed);
+        _rigidbody.MoveRotation(Quaternion.Euler(newRot));
     }
 
     public void GetInBoat(GameObject player)
