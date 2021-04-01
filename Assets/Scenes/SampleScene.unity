@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 8
+  m_AmbientIntensity: 0.4
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 1024
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -2142,8 +2142,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058427eb37d8c2a45ba0fd1de9d7dab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.4
+  dayAmbientColor: {r: 0.21698111, g: 0.21391062, b: 0.21391062, a: 0}
+  nightAmbientColor: {r: 0.04062834, g: 0.048521496, b: 0.103773594, a: 0}
+  dayFogColor: {r: 0.827451, g: 0.92941177, b: 0.93333334, a: 1}
+  nightFogColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTime: 5
+  dayEnvRefInt: 1
+  nightEnvRefInt: 0.1
   stars: {fileID: 2044393548}
-  speed: 1
 --- !u!1 &707430331
 GameObject:
   m_ObjectHideFlags: 0
