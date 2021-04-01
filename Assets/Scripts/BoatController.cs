@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody))]
-public class BoatController : MonoBehaviour
+public class BoatController : MonoBehaviour, IBoatController
 {
     
     [FormerlySerializedAs("maxSpeed")] public float maxVelocity;
@@ -17,7 +17,7 @@ public class BoatController : MonoBehaviour
     public float turnDecelerationFactor;
     private float _currentTurnSpeed;
     
-    public bool isPlayerDriving = false;
+    private bool _isPlayerDriving = false;
     public GameObject playerDriving;
     
     [FormerlySerializedAs("camera")] public Camera boatCamera;
@@ -33,11 +33,11 @@ public class BoatController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isPlayerDriving) return;
+        if (!_isPlayerDriving) return;
 
         if (Input.GetButtonDown("Interact"))
         {
-            isPlayerDriving = false;
+            _isPlayerDriving = false;
             playerDriving.transform.position = transform.position + 5 * transform.right;
             boatCamera.gameObject.SetActive(false);
             playerDriving.SetActive(true);
@@ -77,11 +77,16 @@ public class BoatController : MonoBehaviour
         _rigidbody.MoveRotation(Quaternion.Euler(newRot));
     }
 
+    public bool IsPlayerDriving()
+    {
+        return _isPlayerDriving;
+    }
+
     public void GetInBoat(GameObject player)
     {
         playerDriving = player;
         player.SetActive(false);
         boatCamera.gameObject.SetActive(true);
-        isPlayerDriving = true;
+        _isPlayerDriving = true;
     }
 }

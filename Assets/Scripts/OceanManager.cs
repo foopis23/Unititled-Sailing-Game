@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class OceanManager : MonoBehaviour
 {
-    public BoatController boat;
+    public Transform boatTransform;
+    public PhysicsBoatController boat;
     public Transform player;
     public GameObject[] oceanTiles;
 
@@ -22,7 +23,7 @@ public class OceanManager : MonoBehaviour
 
     private void Update()
     {
-        var playerPosition = boat.isPlayerDriving ? boat.transform.position : player.position;
+        var playerPosition = boat.IsPlayerDriving() ? boatTransform.position : player.position;
         
         // Tile the player is in
         var tileX = Mathf.Round(playerPosition.x / 1000);
