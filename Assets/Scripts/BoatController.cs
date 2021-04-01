@@ -13,7 +13,8 @@ public class BoatController : MonoBehaviour
     private float _velocity;
     
     [FormerlySerializedAs("turnSpeed")] public float maxTurnSpeed;
-    public float _turnAccelerationFactor;
+    [FormerlySerializedAs("_turnAccelerationFactor")] public float turnAccelerationFactor;
+    public float turnDecelerationFactor;
     private float _currentTurnSpeed;
     
     public bool isPlayerDriving = false;
@@ -52,14 +53,14 @@ public class BoatController : MonoBehaviour
         
         if (Input.GetKey(KeyCode.A))
         {
-            _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, -maxTurnSpeed, _turnAccelerationFactor * Time.deltaTime);
+            _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, -maxTurnSpeed, turnAccelerationFactor * Time.deltaTime);
         } else if (Input.GetKey(KeyCode.D))
         {
-            _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, maxTurnSpeed, _turnAccelerationFactor * Time.deltaTime);
+            _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, maxTurnSpeed, turnAccelerationFactor * Time.deltaTime);
         }
         else
         {
-            _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, 0, 0.3f);
+            _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, 0, turnDecelerationFactor * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.Equals))
