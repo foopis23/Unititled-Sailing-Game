@@ -61,8 +61,17 @@ public class BoatController : MonoBehaviour
         {
             _currentTurnSpeed = Mathf.Lerp(_currentTurnSpeed, 0, 0.3f);
         }
-        
-        
+
+        if (Input.GetKeyDown(KeyCode.Equals))
+        {
+            maxVelocity += 5;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Minus))
+        {
+            maxVelocity -= 5;
+        }
+
         var newRot = transform.rotation.eulerAngles + transform.up * (Time.fixedDeltaTime * _currentTurnSpeed);
         _rigidbody.MoveRotation(Quaternion.Euler(newRot));
     }
