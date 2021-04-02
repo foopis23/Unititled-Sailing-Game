@@ -8,6 +8,10 @@ public class PhysicsBoatController : MonoBehaviour, IBoatController
     public bool isPlayerDriving = false;
     private GameObject _playerDriving;
     public Camera boatCamera;
+    
+    public float externalAcceleration;
+    public float randomAcceleration;
+    public Cloth[] sailCloths;
 
     private Rigidbody _rigidbody;
     private bool _isSailOpen;
@@ -17,6 +21,11 @@ public class PhysicsBoatController : MonoBehaviour, IBoatController
 
     private void Start()
     {
+        foreach (var sail in sailCloths)
+        {
+            sail.gameObject.SetActive(false);
+        }
+        
         _rigidbody = GetComponent<Rigidbody>();
         _input = new Vector2();
     }
@@ -32,7 +41,7 @@ public class PhysicsBoatController : MonoBehaviour, IBoatController
         
         if (!isPlayerDriving)
         {
-            _isSailOpen = false;
+            DisableSail();
             _input.x = 0;
             _input.y = 0;
             return;
@@ -48,11 +57,36 @@ public class PhysicsBoatController : MonoBehaviour, IBoatController
 
         if (Input.GetButtonDown("Jump"))
         {
-            _isSailOpen = !_isSailOpen;
+            ToggleSail();
+        }
+
+        if (_isSailOpen)
+        {
+            foreach (var sail in sailCloths)
+            {
+                var right = transform.right;
+                sail.externalAcceleration = right * externalAcceleration;
+                sail.randomAcceleration = right * randomAcceleration;
+            }
         }
 
         _input.x = Input.GetAxis("Horizontal");
         _input.y = Input.GetAxis("Vertical");
+    }
+
+    private void ToggleSail()
+    {
+        _isSailOpen = !_isSailOpen;
+        
+        foreach (var sail in sailCloths)
+        {
+            sail.gameObject.SetActive(_isSailOpen);
+        }
+    }
+
+    private void DisableSail()
+    {
+        if (_isSailOpen) ToggleSail();
     }
 
     private void FixedUpdate()
