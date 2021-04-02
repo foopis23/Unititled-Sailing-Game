@@ -11,6 +11,7 @@ public class Floater : MonoBehaviour
     public int floaterCount = 1;
     public float waterDrag = 0.99f;
     public float waterAngularDrag = 0.5f;
+    public float gravityScale = 1.0f;
 
     public bool alwaysApplyDrag = false;
     
@@ -18,7 +19,7 @@ public class Floater : MonoBehaviour
     {
         var position = transform.position;
         
-        rigidBody.AddForceAtPosition(Physics.gravity/floaterCount, position, ForceMode.Acceleration);
+        rigidBody.AddForceAtPosition((Physics.gravity / floaterCount) * gravityScale, position, ForceMode.Acceleration);
         
         var waveHeight = WaveManager.Instance.GetWaveHeight(position);
 

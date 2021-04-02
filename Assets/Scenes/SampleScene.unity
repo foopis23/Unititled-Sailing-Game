@@ -284,10 +284,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1766004255}
   depthBeforeSubmerged: 1.5
-  displacementAmount: 3
+  displacementAmount: 10
   floaterCount: 9
   waterDrag: 1.98
   waterAngularDrag: 1
+  gravityScale: 2.5
   alwaysApplyDrag: 1
 --- !u!1 &52699102
 GameObject:
@@ -338,6 +339,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &53995568
 GameObject:
@@ -486,6 +488,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &115984282
 GameObject:
@@ -536,6 +539,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1001 &184088412
 PrefabInstance:
@@ -660,6 +664,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &241030364
 GameObject:
@@ -826,6 +831,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &279378459
 GameObject:
@@ -872,10 +878,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1766004255}
   depthBeforeSubmerged: 1.5
-  displacementAmount: 3
+  displacementAmount: 10
   floaterCount: 9
   waterDrag: 1.98
   waterAngularDrag: 1
+  gravityScale: 2.5
   alwaysApplyDrag: 1
 --- !u!1 &290587642
 GameObject:
@@ -1274,6 +1281,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1001 &344653360
 PrefabInstance:
@@ -1514,6 +1522,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &425093371
 GameObject:
@@ -1564,6 +1573,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &450333244
 GameObject:
@@ -1614,6 +1624,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &491337263
 GameObject:
@@ -1730,6 +1741,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &500995235 stripped
 GameObject:
@@ -1786,6 +1798,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &547510392
 GameObject:
@@ -1836,6 +1849,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &603028017
 GameObject:
@@ -1882,10 +1896,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1766004255}
   depthBeforeSubmerged: 1.5
-  displacementAmount: 3
+  displacementAmount: 10
   floaterCount: 9
   waterDrag: 1.98
   waterAngularDrag: 1
+  gravityScale: 2.5
   alwaysApplyDrag: 1
 --- !u!1 &628522176
 GameObject:
@@ -1936,6 +1951,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &658780605
 GameObject:
@@ -2062,6 +2078,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &699047027
 GameObject:
@@ -2266,6 +2283,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!4 &750050510 stripped
 Transform:
@@ -2352,6 +2370,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &796614232
 GameObject:
@@ -2402,6 +2421,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &798078777
 GameObject:
@@ -2452,6 +2472,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &837272682
 GameObject:
@@ -2502,6 +2523,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &851261942
 GameObject:
@@ -2548,10 +2570,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1766004255}
   depthBeforeSubmerged: 1.5
-  displacementAmount: 3
+  displacementAmount: 10
   floaterCount: 9
   waterDrag: 1.98
   waterAngularDrag: 1
+  gravityScale: 2.5
   alwaysApplyDrag: 1
 --- !u!1 &886569310
 GameObject:
@@ -2602,6 +2625,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &902498684
 GameObject:
@@ -2652,6 +2676,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &920732337
 GameObject:
@@ -2698,10 +2723,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1766004255}
   depthBeforeSubmerged: 1.5
-  displacementAmount: 3
+  displacementAmount: 10
   floaterCount: 9
   waterDrag: 1.98
   waterAngularDrag: 1
+  gravityScale: 2.5
   alwaysApplyDrag: 1
 --- !u!1 &940395297
 GameObject:
@@ -2868,6 +2894,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &963194225
 GameObject:
@@ -3026,6 +3053,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1010770444
 GameObject:
@@ -3394,10 +3422,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1766004255}
   depthBeforeSubmerged: 1.5
-  displacementAmount: 3
+  displacementAmount: 10
   floaterCount: 9
   waterDrag: 1.98
   waterAngularDrag: 1
+  gravityScale: 2.5
   alwaysApplyDrag: 1
 --- !u!1 &1247531404
 GameObject:
@@ -3661,6 +3690,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1308200631
 GameObject:
@@ -3711,6 +3741,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1338779194
 GameObject:
@@ -3761,6 +3792,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1001 &1339996958
 PrefabInstance:
@@ -3887,10 +3919,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1766004255}
   depthBeforeSubmerged: 1.5
-  displacementAmount: 3
+  displacementAmount: 10
   floaterCount: 9
   waterDrag: 1.98
   waterAngularDrag: 1
+  gravityScale: 2.5
   alwaysApplyDrag: 1
 --- !u!1001 &1386142725
 PrefabInstance:
@@ -4010,6 +4043,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1444975519
 GameObject:
@@ -4060,6 +4094,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1001 &1461058349
 PrefabInstance:
@@ -4269,6 +4304,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1499461578
 GameObject:
@@ -4319,6 +4355,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!850595691 &1580059475
 LightingSettings:
@@ -4426,10 +4463,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1766004255}
   depthBeforeSubmerged: 1.5
-  displacementAmount: 3
+  displacementAmount: 10
   floaterCount: 9
   waterDrag: 1.98
   waterAngularDrag: 1
+  gravityScale: 2.5
   alwaysApplyDrag: 1
 --- !u!1 &1590469295
 GameObject:
@@ -4480,6 +4518,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1615657571
 GameObject:
@@ -4530,6 +4569,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1620403066
 GameObject:
@@ -4580,6 +4620,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1634595053
 GameObject:
@@ -4674,6 +4715,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1710751210
 GameObject:
@@ -4724,6 +4766,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1718537696
 GameObject:
@@ -4774,6 +4817,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1766004253
 GameObject:
@@ -4846,7 +4890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf09c9246950d24080cfdb196fadb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windScale: 18750
+  windScale: 28125
+  slowMoveScale: 6250
   turningScale: 5000
   isPlayerDriving: 0
   boatCamera: {fileID: 963194227}
@@ -5069,6 +5114,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1888417901
 GameObject:
@@ -5235,6 +5281,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &1907446242
 GameObject:
@@ -5285,6 +5332,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!4 &1946188393 stripped
 Transform:
@@ -5341,6 +5389,7 @@ MonoBehaviour:
   floaterCount: 4
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  gravityScale: 1
   alwaysApplyDrag: 0
 --- !u!1 &2044393546
 GameObject:
@@ -10208,10 +10257,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1766004255}
   depthBeforeSubmerged: 1.5
-  displacementAmount: 3
+  displacementAmount: 10
   floaterCount: 9
   waterDrag: 1.98
   waterAngularDrag: 1
+  gravityScale: 2.5
   alwaysApplyDrag: 1
 --- !u!1001 &2079505655
 PrefabInstance:
