@@ -8,6 +8,7 @@ using RenderSettings = UnityEngine.RenderSettings;
 
 public class DayNightSystem : MonoBehaviour
 {
+    public float startTime;
     public float speed;
     
     [ColorUsage(false, true)]
@@ -33,7 +34,10 @@ public class DayNightSystem : MonoBehaviour
     
     private void Start()
     {
-        _time = 0;
+        _time = startTime;
+        transform.RotateAround(Vector3.zero, Vector3.right, startTime);
+        transform.LookAt(Vector3.zero);
+        
         _currentAmbientColor = dayAmbientColor;
         _currentFogColor = dayFogColor;
         _currentEnvRefInt = dayEnvRefInt;
