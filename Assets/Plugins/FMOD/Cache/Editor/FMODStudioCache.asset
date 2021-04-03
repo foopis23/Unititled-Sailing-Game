@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6203397919072663484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/bgm/bgm
+  m_EditorClassIdentifier: 
+  Path: event:/bgm/bgm
+  guid: ecceaaa37275174ea690da12778b2b6d
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-5641711836491702966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,11 +37,11 @@ MonoBehaviour:
   Path: FMOD/UntitledWaveGame'/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637529929506034236
+  lastModified: 637529944448027773
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 700
+    Value: 740
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -36,14 +58,38 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: -5641711836491702966}
   - {fileID: 8782772201137755275}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: 7948188121003932588}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8782772201137755275}
   StringsBanks:
   - {fileID: -5641711836491702966}
-  stringsBankWriteTime: 637529929506034236
+  stringsBankWriteTime: 637529944448027773
   cacheVersion: 6
+--- !u!114 &7948188121003932588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/bgm
+  m_EditorClassIdentifier: 
+  Path: event:/bgm
+  guid: 10f3a9a003ef204c81643d05ecabe3dc
+  Banks:
+  - {fileID: 8782772201137755275}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 66000
 --- !u!114 &8782772201137755275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +105,7 @@ MonoBehaviour:
   Path: FMOD/UntitledWaveGame'/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637529929506004248
+  lastModified: 637529944447967779
   LoadResult: 0
   FileSizes: []
   Exists: 1
