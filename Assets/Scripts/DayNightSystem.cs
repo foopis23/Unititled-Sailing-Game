@@ -77,31 +77,35 @@ public class DayNightSystem : MonoBehaviour
     {
         if (_time > 180 - fadeTime && _time < 360-fadeTime)
         {
+            var intpoint = (_time - 180 - fadeTime) / (fadeTime * 2);
             if (Math.Abs(_currentEnvRefInt - nightEnvRefInt) > 0.01)
-                _currentEnvRefInt = Mathf.Lerp(_currentEnvRefInt, nightEnvRefInt, Time.deltaTime * fadeTime);
+                _currentEnvRefInt = Mathf.Lerp(dayEnvRefInt, nightEnvRefInt, intpoint);
             
             if (_currentFogColor != nightFogColor)
-                _currentFogColor = Color.Lerp(_currentFogColor, nightFogColor, Time.deltaTime * fadeTime);
+                _currentFogColor = Color.Lerp(dayFogColor, nightFogColor, intpoint);
             
             if (_currentAmbientColor != nightAmbientColor)
-                _currentAmbientColor = Color.Lerp(_currentAmbientColor, nightAmbientColor, Time.deltaTime * fadeTime);
+                _currentAmbientColor = Color.Lerp(dayAmbientColor, nightAmbientColor, intpoint);
 
             if (_light.intensity > 0.01)
-                _light.intensity = Mathf.Lerp(_light.intensity, 0, Time.deltaTime * fadeTime);
+                _light.intensity = Mathf.Lerp(_light.intensity, 0, intpoint);
 
         }else if (_time > 360 - fadeTime || _time < 180 - fadeTime)
         {
+
+            var intpoint = ((_time > 360 - fadeTime) ? (_time - 360 - fadeTime) : _time + fadeTime) / (fadeTime * 2);
+
             if (Math.Abs(_currentEnvRefInt - dayEnvRefInt) > 0.01)
-                _currentEnvRefInt = Mathf.Lerp(_currentEnvRefInt, dayEnvRefInt, Time.deltaTime * fadeTime);
+                _currentEnvRefInt = Mathf.Lerp(nightEnvRefInt, dayEnvRefInt, intpoint);
             
             if (_currentFogColor != dayFogColor)
-                _currentFogColor = Color.Lerp(_currentFogColor, dayFogColor, Time.deltaTime * fadeTime);
+                _currentFogColor = Color.Lerp(nightFogColor, dayFogColor, intpoint);
             
             if (_currentAmbientColor != dayAmbientColor)
-                _currentAmbientColor = Color.Lerp(_currentAmbientColor, dayAmbientColor, Time.deltaTime * fadeTime);
+                _currentAmbientColor = Color.Lerp(nightAmbientColor, dayAmbientColor, intpoint);
             
             if (_light.intensity < 0.99)
-                _light.intensity = Mathf.Lerp(_light.intensity, 1.0f, Time.deltaTime * fadeTime);
+                _light.intensity = Mathf.Lerp(_light.intensity, 1.0f, intpoint);
         }
         
         RenderSettings.reflectionIntensity = _currentEnvRefInt;
