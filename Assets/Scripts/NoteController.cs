@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NoteController : MonoBehaviour
 {
     private bool _firstFrame = true;
+    private bool _isCardOpen = false;
     private Animator _animator;
     
     private void Start()
@@ -15,23 +13,23 @@ public class NoteController : MonoBehaviour
 
     private void Update()
     {
+        if (!_isCardOpen) return;
+        
         if (_firstFrame)
         {
             _firstFrame = false;
             return;
         }
 
-        if (Input.GetButtonDown("Interact"))
-        {
-            _animator.Play("NoteClose");
-            // gameObject.SetActive(false);
-        }       
+        if (!Input.GetButtonDown("Interact")) return;
+        _animator.Play("NoteClose");
+        _isCardOpen = false;
     }
 
     public void ActivateNote()
     {
+        _isCardOpen = true;
         _firstFrame = true;
-        
         _animator.Play("NoteOpen");
     }
 }
