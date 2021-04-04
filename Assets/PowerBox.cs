@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,13 @@ public class PowerBox : MonoBehaviour
 
     private bool _hasSeenNote;
     private bool _towerIsActive;
-    
+    private NoteController _noteController;
+
+    private void Start()
+    {
+        _noteController = noteDisplay.GetComponent<NoteController>();
+    }
+
     public void OnInteract(GameObject player)
     {
         if (_towerIsActive) return;
@@ -30,7 +37,7 @@ public class PowerBox : MonoBehaviour
         {
             // show note
             noteDisplay.sprite = note;
-            noteDisplay.gameObject.SetActive(true);
+            _noteController.ActivateNote();
             _hasSeenNote = true;
         }
     }

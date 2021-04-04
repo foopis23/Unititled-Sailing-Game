@@ -41,12 +41,15 @@ public class PhysicsBoatController : MonoBehaviour, IBoatController
         
         if (!isPlayerDriving)
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("IsInBoat", 0);
             DisableSail();
             _input.x = 0;
             _input.y = 0;
             return;
         }
-        
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("IsInBoat", 1);
+
         if (Input.GetButtonDown("Interact"))
         {
             isPlayerDriving = false;

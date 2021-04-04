@@ -37,11 +37,11 @@ MonoBehaviour:
   Path: FMOD/UntitledWaveGame'/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637531329738987599
+  lastModified: 637531525828264584
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 740
+    Value: 790
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -65,7 +65,7 @@ MonoBehaviour:
   - {fileID: 8782772201137755275}
   StringsBanks:
   - {fileID: -5641711836491702966}
-  stringsBankWriteTime: 637531329738987599
+  stringsBankWriteTime: 637531525828264584
   cacheVersion: 6
 --- !u!114 &7948188121003932588
 MonoBehaviour:
@@ -105,7 +105,7 @@ MonoBehaviour:
   Path: FMOD/UntitledWaveGame'/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637531329738907498
+  lastModified: 637531525828204576
   LoadResult: 0
   FileSizes: []
   Exists: 1
