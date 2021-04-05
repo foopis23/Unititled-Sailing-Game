@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identifier: 46fbfdf3fc43db0458918377fd40293e
-  parentIdentifier: default
+  parentIdentifier: 2c5177b11d81d824dbb064f9ac8527da
   displaySortOrder: 0
   active: 1
   Properties:

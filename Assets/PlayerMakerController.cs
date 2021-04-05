@@ -40,8 +40,6 @@ public class PlayerMakerController : MonoBehaviour
         var mapTileY = ZeroTile.y + playerTileY;
         var mapTileXOffset = (playerXTileOffset / 1000f) * tileSize;
         var mapTileYOffset = (playerYTileOffset / 1000f) * tileSize;
-        
-        Debug.Log(playerTileY);
 
         // FUCK, and then canvas render pos max min fuck
         var x = borderSize + (mapTileX * tileSize) + mapTileXOffset;

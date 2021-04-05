@@ -75,9 +75,12 @@ public class DayNightSystem : MonoBehaviour
 
     private void HandleTransitions()
     {
-        if (_time > 180 - fadeTime && _time < 360-fadeTime)
+        if (_time > (180 - fadeTime) && _time < (360 - fadeTime))
         {
-            var intpoint = (_time - 180 - fadeTime) / (fadeTime * 2);
+            var intpoint = (_time - (180 - fadeTime)) / (fadeTime * 2);
+            
+            Debug.Log(_time - (180 - fadeTime));
+
             if (Math.Abs(_currentEnvRefInt - nightEnvRefInt) > 0.01)
                 _currentEnvRefInt = Mathf.Lerp(dayEnvRefInt, nightEnvRefInt, intpoint);
             
