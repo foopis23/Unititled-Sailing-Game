@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class SimonController : MonoBehaviour
@@ -11,12 +12,20 @@ public class SimonController : MonoBehaviour
     public float timeBetweenButtons;
     public float timeToExpireAttempt = 60;
     
+    [FMODUnity.EventRef] public string redSoundEffect = "";
+    [FMODUnity.EventRef] public string blueSoundEffect = "";
+    [FMODUnity.EventRef] public string yellowSoundEffect = "";
+    [FMODUnity.EventRef] public string greenSoundEffect = "";
+    [FMODUnity.EventRef] public string failSoundEffect = "";
+    [FMODUnity.EventRef] public string winSoundEffect = "";
+
     private float _lastAttemptTime;
     private int _attemptIndex;
     private int _level;
     private float _lastPatternTime;
     private float _lastButtonTime;
     private int _patternIndex;
+    
 
     private bool _displayCurrentLevel = false;
     
@@ -60,7 +69,25 @@ public class SimonController : MonoBehaviour
         }
         
         simonAnimator.Play($"Activate{pattern[_patternIndex]}");
+        FMODUnity.RuntimeManager.PlayOneShot(GetColorEffect(pattern[_patternIndex]), transform.position);
         _patternIndex++;
+    }
+
+    private string GetColorEffect(string color)
+    {
+        switch (color)
+        {
+            case "Red":
+                return redSoundEffect;
+            case "Blue":
+                return blueSoundEffect;
+            case "Yellow":
+                return yellowSoundEffect;
+            case "Green":
+                return greenSoundEffect;
+        }
+
+        return redSoundEffect;
     }
 
     private void Fail()
