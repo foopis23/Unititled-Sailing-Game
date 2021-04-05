@@ -6,6 +6,7 @@ public class PhysicsBoatController : MonoBehaviour, IBoatController
     public float slowMoveScale;
     public float turningScale;
     public bool isPlayerDriving = false;
+
     private GameObject _playerDriving;
     public Camera boatCamera;
     
