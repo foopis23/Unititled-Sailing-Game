@@ -2701,6 +2701,12 @@ MonoBehaviour:
   timeBetweenPatterns: 5
   timeBetweenButtons: 1.5
   timeToExpireAttempt: 60
+  redSoundEffect: event:/red
+  blueSoundEffect: event:/blue
+  yellowSoundEffect: event:/yellow
+  greenSoundEffect: event:/green
+  failSoundEffect: event:/fail
+  winSoundEffect: event:/win
 --- !u!1 &783122504
 GameObject:
   m_ObjectHideFlags: 0
@@ -9025,7 +9031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247531404}
   m_LocalRotation: {x: -0, y: -0.8881006, z: -0, w: 0.45964915}
-  m_LocalPosition: {x: 1130, y: 20.4, z: -2164}
+  m_LocalPosition: {x: 1996.6, y: 20.4, z: 6.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 53995569}

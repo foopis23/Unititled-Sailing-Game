@@ -1,5 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8140243240502847888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/green
+  m_EditorClassIdentifier: 
+  Path: event:/green
+  guid: 01c3884e895b7f4ebec149fa5573c442
+  Banks:
+  - {fileID: 8782772201137755275}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &-6730087955959770177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/IsInBoat
+  m_EditorClassIdentifier: 
+  Name: IsInBoat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3997152919
+    data2: 1647493955
+  Exists: 1
 --- !u!114 &-6203397919072663484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22,6 +65,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-5999567942003911825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/red
+  m_EditorClassIdentifier: 
+  Path: event:/red
+  guid: 1be4b272fa81954bba0d8b452709b96e
+  Banks:
+  - {fileID: 8782772201137755275}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &-5641711836491702966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,12 +103,55 @@ MonoBehaviour:
   Path: FMOD/UntitledWaveGame'/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637531594157937853
+  lastModified: 637531793287674889
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 838
+    Value: 1072
   Exists: 1
+--- !u!114 &-3078700200872510003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/InGame
+  m_EditorClassIdentifier: 
+  Name: InGame
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3963269036
+    data2: 565642167
+  Exists: 1
+--- !u!114 &-1131258513425049334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/blue
+  m_EditorClassIdentifier: 
+  Path: event:/blue
+  guid: d2a1d755255fff4ea89b369d5ffecd31
+  Banks:
+  - {fileID: 8782772201137755275}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,13 +169,44 @@ MonoBehaviour:
   - {fileID: 8782772201137755275}
   EditorEvents:
   - {fileID: 7948188121003932588}
-  EditorParameters: []
+  - {fileID: -8140243240502847888}
+  - {fileID: 8617450529552285082}
+  - {fileID: -5999567942003911825}
+  - {fileID: 4956812894626108278}
+  - {fileID: 8454686516561266071}
+  - {fileID: -1131258513425049334}
+  EditorParameters:
+  - {fileID: -6730087955959770177}
+  - {fileID: -3078700200872510003}
   MasterBanks:
   - {fileID: 8782772201137755275}
   StringsBanks:
   - {fileID: -5641711836491702966}
-  stringsBankWriteTime: 637531594157937853
+  stringsBankWriteTime: 637531793287674889
   cacheVersion: 6
+--- !u!114 &4956812894626108278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/fail
+  m_EditorClassIdentifier: 
+  Path: event:/fail
+  guid: 31656a59e11e474a9ae307ae0932907f
+  Banks:
+  - {fileID: 8782772201137755275}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &7948188121003932588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +229,53 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 78000
+  Length: 186500
+--- !u!114 &8454686516561266071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/win
+  m_EditorClassIdentifier: 
+  Path: event:/win
+  guid: b23436470ef6f640b7b8e7c8ff7470d0
+  Banks:
+  - {fileID: 8782772201137755275}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1250
+--- !u!114 &8617450529552285082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/yellow
+  m_EditorClassIdentifier: 
+  Path: event:/yellow
+  guid: 045d16ddf4852b438625b00d490ae09d
+  Banks:
+  - {fileID: 8782772201137755275}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &8782772201137755275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +291,7 @@ MonoBehaviour:
   Path: FMOD/UntitledWaveGame'/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637531594157877887
+  lastModified: 637531793287586732
   LoadResult: 0
   FileSizes: []
   Exists: 1
