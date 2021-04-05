@@ -1251,7 +1251,7 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -8417,6 +8417,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2060132438}
     m_Modifications:
+    - target: {fileID: 759820648120639843, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4874126678125670354, guid: 8625ce686d0d9fa47813ea6f65844f4b,
+        type: 3}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 761632655}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PressedBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SimonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 759820648571459388, guid: db59781f75257c046a24d4f68217c4fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -8605,6 +8646,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2060132438}
     m_Modifications:
+    - target: {fileID: 759820648120639843, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3846018093981099296, guid: 8625ce686d0d9fa47813ea6f65844f4b,
+        type: 3}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 761632655}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PressedRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SimonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 759820648571459388, guid: db59781f75257c046a24d4f68217c4fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -10505,6 +10587,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2060132438}
     m_Modifications:
+    - target: {fileID: 759820648120639843, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6629797300637803691, guid: 8625ce686d0d9fa47813ea6f65844f4b,
+        type: 3}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 761632655}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PressedGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SimonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 759820648571459388, guid: db59781f75257c046a24d4f68217c4fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -15721,6 +15844,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2060132438}
     m_Modifications:
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 761632655}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PressedYellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SimonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 759820648571459385, guid: db59781f75257c046a24d4f68217c4fa,
+        type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 759820648571459388, guid: db59781f75257c046a24d4f68217c4fa,
         type: 3}
       propertyPath: m_RootOrder
