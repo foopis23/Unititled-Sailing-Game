@@ -12,12 +12,6 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{d0761f5f-8ac0-4572-a886-0e5f38333afc}">
-		<property name="parameterType">
-			<value>1</value>
-		</property>
-		<property name="maximum">
-			<value>2</value>
-		</property>
 		<property name="isGlobal">
 			<value>true</value>
 		</property>
