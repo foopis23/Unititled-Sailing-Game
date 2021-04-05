@@ -11,13 +11,15 @@ public class SimonController : MonoBehaviour
     public float timeBetweenPatterns;
     public float timeBetweenButtons;
     public float timeToExpireAttempt = 60;
-    
-    [FMODUnity.EventRef] public string redSoundEffect = "";
-    [FMODUnity.EventRef] public string blueSoundEffect = "";
-    [FMODUnity.EventRef] public string yellowSoundEffect = "";
-    [FMODUnity.EventRef] public string greenSoundEffect = "";
-    [FMODUnity.EventRef] public string failSoundEffect = "";
-    [FMODUnity.EventRef] public string winSoundEffect = "";
+
+    public StudioEventEmitter redEventEmitter;
+    public StudioEventEmitter blueEventEmitter;
+    public StudioEventEmitter yellowEventEmitter;
+    public StudioEventEmitter greenEventEmitter;
+    public StudioEventEmitter failEventEmitter;
+    public StudioEventEmitter successEventEmitter;
+
+    public ParticleSystem towerParticleSystem;
 
     private float _lastAttemptTime;
     private int _attemptIndex;
@@ -25,6 +27,8 @@ public class SimonController : MonoBehaviour
     private float _lastPatternTime;
     private float _lastButtonTime;
     private int _patternIndex;
+
+    private bool _puzzleDefeated;
     
 
     private bool _displayCurrentLevel = false;
@@ -42,6 +46,8 @@ public class SimonController : MonoBehaviour
     
     private void Update()
     {
+        if (_puzzleDefeated) return;
+        
         if (_lastAttemptTime > 0)
         {
             // Attempt Expired
@@ -69,25 +75,20 @@ public class SimonController : MonoBehaviour
         }
         
         simonAnimator.Play($"Activate{pattern[_patternIndex]}");
-        FMODUnity.RuntimeManager.PlayOneShot(GetColorEffect(pattern[_patternIndex]), transform.position);
+        GetColorEffect(pattern[_patternIndex]).Play();
         _patternIndex++;
     }
 
-    private string GetColorEffect(string color)
+    private StudioEventEmitter GetColorEffect(string color)
     {
-        switch (color)
+        return color switch
         {
-            case "Red":
-                return redSoundEffect;
-            case "Blue":
-                return blueSoundEffect;
-            case "Yellow":
-                return yellowSoundEffect;
-            case "Green":
-                return greenSoundEffect;
-        }
-
-        return redSoundEffect;
+            "Red" => redEventEmitter,
+            "Blue" => blueEventEmitter,
+            "Yellow" => yellowEventEmitter,
+            "Green" => greenEventEmitter,
+            _ => redEventEmitter
+        };
     }
 
     private void Fail()
@@ -102,6 +103,8 @@ public class SimonController : MonoBehaviour
         _lastPatternTime = Time.time;
         _lastButtonTime = Time.time;
         _displayCurrentLevel = true;
+        
+        failEventEmitter.Play();
     }
 
     private void CompleteLevel()
@@ -118,12 +121,16 @@ public class SimonController : MonoBehaviour
 
     private void CompletePuzzle()
     {
-        // TODO: Play Complete Puzzle Sound
+        successEventEmitter.Play();
         // TODO: Activate Beacon
         
         _displayCurrentLevel = false;
         _attemptIndex = 0;
         _lastAttemptTime = -1;
+        _puzzleDefeated = true;
+        towerParticleSystem.gameObject.SetActive(true);
+        PlayerData.Instance.activatedTower2 = true;
+        
     }
 
     private void HitButton(string color)
@@ -131,6 +138,7 @@ public class SimonController : MonoBehaviour
         _displayCurrentLevel = false;
         _lastAttemptTime = Time.time;
         simonAnimator.Play($"Activate{color}");
+        GetColorEffect(color).Play();
         
         if (!pattern[_attemptIndex].Equals(color))
         {
@@ -149,7 +157,7 @@ public class SimonController : MonoBehaviour
 
         }
         
-        if (_level < pattern.Length) return;
+        if (_level <= pattern.Length) return;
         
         //puzzle complete
         CompletePuzzle();

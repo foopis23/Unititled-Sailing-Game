@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
@@ -8,6 +5,14 @@ public class PlayerData : MonoBehaviour
     public static PlayerData Instance;
 
     public bool hasPowerCoil;
+
+    public bool activatedTower1;
+    public bool activatedTower2;
+    public bool activatedTower3;
+
+    public Animator endingAnimator;
+
+    private bool _playedEndingAnimation = false;
 
     private void Awake()
     {
@@ -18,5 +23,13 @@ public class PlayerData : MonoBehaviour
         }
 
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if (!activatedTower1 || !activatedTower2 || !activatedTower3 || _playedEndingAnimation) return;
+        
+        _playedEndingAnimation = true;
+        endingAnimator.Play("Ending");
     }
 }

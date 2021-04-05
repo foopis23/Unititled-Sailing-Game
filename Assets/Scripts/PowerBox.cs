@@ -32,6 +32,7 @@ public class PowerBox : MonoBehaviour
             powerCoilObject.SetActive(true);
             particleSystem.SetActive(true);
             _towerIsActive = true;
+            PlayerData.Instance.activatedTower3 = true;
         }
         else
         {
